@@ -23,3 +23,27 @@ jobs:
       - name: npm Install cache
         run: npm install
         working-directory: packages/cache
+        
+      - name: npm Install artifact
+        run: npm install
+        working-directory: packages/artifact
+        
+      - name: npm Install exec
+        run: npm install
+        working-directory: packages/exec
+
+      - name: npm Install github
+        run: npm install
+        working-directory: packages/github
+        
+      - name: npm Install glob
+        run: npm install
+        working-directory: packages/glob
+
+      - name: npm Install io
+        run: npm install
+        working-directory: packages/io
+        
+      - name: npm Install tool-cache
+        run: npm install
+        working-directory: packages/tool-cache
