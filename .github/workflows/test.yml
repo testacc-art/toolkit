@@ -1,0 +1,27 @@
+name: tests
+on: [workflow_dispatch]
+jobs:
+  tests:
+    name: node ${{ matrix.node-version }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [16, 14, 12]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: dmitry-shibanov/setup-node@v-dmshib/add-cache-dependencies-path
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+#           cache-dependency-path: |
+#             packages/cache/package.json
+#             packages/core/package.json
+      - name: npm Install core
+        run: npm install
+        working-directory: packages/core
+        
+      - name: npm Install cache
+        run: npm install
+        working-directory: packages/cache
