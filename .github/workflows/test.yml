@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-#           cache-dependency-path: |
-#             packages/cache/package.json
-#             packages/core/package.json
+          cache-dependency-path: |
+            packages/cache/package-lock.json
+            packages/core/package-lock.json
       - name: npm Install core
         run: npm install
         working-directory: packages/core
