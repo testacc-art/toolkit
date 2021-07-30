@@ -14,8 +14,8 @@ jobs:
         uses: dmitry-shibanov/setup-node@v-dmshib/add-cache-dependencies-path
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+#           cache: 'npm'
+#           cache-dependency-path: '**/package-lock.json'
       - name: npm Install core
         run: npm install
         working-directory: packages/core
