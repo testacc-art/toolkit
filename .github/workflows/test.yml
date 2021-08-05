@@ -11,7 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: dmitry-shibanov/setup-node@v-dmshib/add-cache-dependencies-path
+        uses: MaksimZhukov/setup-node@mazhuk/adding-support-for-monorepos
+#         uses: dmitry-shibanov/setup-node@v-dmshib/add-cache-dependencies-path
         with:
           node-version: ${{ matrix.node-version }}
 #           cache: 'npm'
